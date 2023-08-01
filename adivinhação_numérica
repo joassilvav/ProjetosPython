@@ -1,0 +1,15 @@
+import random
+print('-------------------')
+print('Desafio dos números')
+print('-------------------')
+num_r = random.randrange(0, 11)
+score = 1
+numero_usuario = int(input('Digite um número para advinhar: '))
+while numero_usuario != num_r:
+    if numero_usuario < num_r:
+        print('o numero randomico é maior que isso')
+    else:
+        print('o numero randomico é menor que isso')
+    numero_usuario = int(input('Digite um número para advinhar: '))
+    score += 1
+print(f'Parabéns, Você acertou! O número certo é: {num_r}. Tentativas: {score}')
