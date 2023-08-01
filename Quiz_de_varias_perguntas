@@ -1,0 +1,30 @@
+import random
+perguntas = ['1.Quantas cores tem o arco?','2. Qual é a letra que antecede a letra O no alfabeto brasileiro?']
+resp = ['\nA)Sete\nB)Oito\nC)Nove\nD)Dez', '\nA)M\nB)N\nC)P\nD)Q']
+verd = ['A', 'B']
+nm = ['A','B','C', 'D']
+score = 0
+p = []
+jogar = input('Se quiser jogar digite S/N: ')
+while jogar.upper() != 'N':
+    x = random.randrange(0, 2)
+    if x not in p:
+        p.append(x)
+        print(f'{perguntas[x]}\n'
+              f'{resp[x]}')
+        alternativa_usuario = input('Alternativa: ')
+        if alternativa_usuario.upper() not in nm:
+            print('digite uma das alternativas acima')
+            continue
+        elif alternativa_usuario.upper() == verd[x]:
+            score += 1
+            print('Acertou', f'Você atingiu {score} pontos')
+        else:
+            print(f'errou, a resposta era ({verd[x]})')
+    else:
+        continue
+    if x in range(len(p)):
+        print(f'Você Respondeu todas seu score é {score}, parabéns')
+        break
+    jogar = input('continuar? S/N: ')
+print('Até Logo........')
